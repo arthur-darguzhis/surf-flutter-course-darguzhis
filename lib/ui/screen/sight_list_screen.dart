@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:places/mocks.dart';
+import 'package:places/ui/screen/sight_card.dart';
 
 ///screen of "interesting places"
 class SightListScreen extends StatefulWidget {
@@ -12,29 +14,24 @@ class _SightListScreenState extends State<SightListScreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 100,
-        title: RichText(
-          text: TextSpan(
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 32,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.bold),
-              children: [
-                TextSpan(
-                  text: 'C',
-                  style: TextStyle(color: Colors.green),
-                ),
-                TextSpan(text: 'писок\n'),
-                TextSpan(
-                  text: 'и',
-                  style: TextStyle(color: Colors.yellow),
-                ),
-                TextSpan(text: 'нтересных мест'),
-              ]),
-          textAlign: TextAlign.left,
+        title: Container(
+          alignment: Alignment.topLeft,
+          child: Text(
+            'Список\n'
+            'интересных мест',
+            textAlign: TextAlign.left,
+            style: TextStyle(color: Colors.black, fontSize: 32, fontFamily: 'Roboto', fontWeight: FontWeight.bold),
+          ),
         ),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 0,
+      ),
+      body: Column(
+        children: [
+          SightCard(mocks[0]),
+          SightCard(mocks[1]),
+          SightCard(mocks[2]),
+        ],
       ),
     );
   }
