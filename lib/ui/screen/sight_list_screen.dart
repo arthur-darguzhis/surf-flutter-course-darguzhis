@@ -11,32 +11,20 @@ class _SightListScreenState extends State<SightListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Interesting places'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Space for content',
-            ),
-          ],
+        toolbarHeight: 100,
+        title: Text(
+          'Список\n'
+          'интересных мест',
+          textAlign: TextAlign.left,
+          style: TextStyle(
+              color: Colors.black,
+              fontSize: 32,
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.bold),
         ),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 0,
       ),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: Container(
-          height: 50.0,
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() {
-          print('Send link with places');
-        }),
-        tooltip: 'Share places with friends',
-        child: const Icon(Icons.share),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
