@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
-import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/text_style.dart';
 import 'package:places/ui/screen/sight_card.dart';
 
 ///screen of "interesting places"
@@ -21,7 +21,7 @@ class _SightListScreenState extends State<SightListScreen> {
             'Список\n'
             'интересных мест',
             textAlign: TextAlign.left,
-            style: TextStyle(color: appBarText, fontSize: 32, fontFamily: 'Roboto', fontWeight: FontWeight.bold),
+            style: textBold32,
           ),
         ),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,

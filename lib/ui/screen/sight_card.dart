@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/text_style.dart';
 
 class SightCard extends StatelessWidget {
   final Sight sight;
@@ -33,11 +34,7 @@ class SightCard extends StatelessWidget {
                     left: 16,
                     child: Text(
                       sight.type,
-                      style: TextStyle(
-                        color: white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: textBold14White,
                     ),
                   ),
                   Positioned(
@@ -70,11 +67,7 @@ class SightCard extends StatelessWidget {
                       Text(
                         sight.name,
                         textAlign: TextAlign.start,
-                        style: TextStyle(
-                          color: textColorPrimary,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                        ),
+                        style: textMedium16White,
                       ),
                       //Контейнер для отсупа между блоками текста
                       Container(
@@ -84,11 +77,7 @@ class SightCard extends StatelessWidget {
                         sight.details,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: textColorSecondary,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                        ),
+                        style: textRegular14Secondary,
                       ),
                     ],
                   ),

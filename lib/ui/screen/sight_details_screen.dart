@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/text_style.dart';
 
 class SightDetails extends StatelessWidget {
   final Sight sight;
@@ -45,21 +46,21 @@ class SightDetails extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: Text(
                       sight.name,
-                      style: TextStyle(color: textColorPrimary, fontSize: 24, fontWeight: FontWeight.w700),
+                      style: textBold24Primary,
                     ),
                   ),
                   Row(
                     children: [
                       Text(
                         sight.type,
-                        style: TextStyle(color: textColorPrimary, fontSize: 14, fontWeight: FontWeight.w700),
+                        style: textBold14Primary,
                       ),
                       Container(
                         width: 16,
                       ),
                       Text(
                         'закрыто до 09:00',
-                        style: TextStyle(color: textColorSecondary, fontSize: 14, fontWeight: FontWeight.w400),
+                        style: textRegular14Secondary,
                       )
                     ],
                   ),
@@ -69,11 +70,7 @@ class SightDetails extends StatelessWidget {
                       sight.details,
                       maxLines: 7,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: textColorPrimary,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: textRegular14Primary,
                     ),
                   ),
                   Container(
@@ -87,7 +84,7 @@ class SightDetails extends StatelessWidget {
                     child: Align(
                       child: Text(
                         'ПОСТРОИТЬ МАРШРУТ',
-                        style: TextStyle(color: white, fontSize: 14, fontWeight: FontWeight.w700),
+                        style: textBold14White,
                       ),
                     ),
                   ),
@@ -110,7 +107,7 @@ class SightDetails extends StatelessWidget {
                               ),
                               Text(
                                 'Запланировать',
-                                style: TextStyle(fontSize: 14, color: textColorSecondary, fontWeight: FontWeight.w400),
+                                style: textRegular14Secondary,
                               )
                             ],
                           ),
@@ -130,7 +127,7 @@ class SightDetails extends StatelessWidget {
                             ),
                             Text(
                               'В избранное',
-                              style: TextStyle(fontSize: 14, color: textColorPrimary, fontWeight: FontWeight.w400),
+                              style: textRegular14Primary,
                             )
                           ]),
                         ),
