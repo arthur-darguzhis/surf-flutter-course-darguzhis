@@ -13,20 +13,7 @@ class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100,
-        title: Container(
-          alignment: Alignment.topLeft,
-          child: Text(
-            'Список\n'
-            'интересных мест',
-            textAlign: TextAlign.left,
-            style: textBold32,
-          ),
-        ),
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        elevation: 0,
-      ),
+      appBar: CustomAppBar(),
       body: Column(
         children: [
           SightCard(mocks[0]),
@@ -36,4 +23,28 @@ class _SightListScreenState extends State<SightListScreen> {
       ),
     );
   }
+}
+
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: 16,
+        right: 16,
+        bottom: 16,
+      ),
+      child: SafeArea(
+        child: Text(
+          'Список\n'
+          'интересных мест',
+          textAlign: TextAlign.left,
+          style: textBold32,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Size get preferredSize => Size(double.infinity, 100);
 }
