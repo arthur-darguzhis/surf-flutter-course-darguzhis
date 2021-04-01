@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/colors.dart';
 
 class SightDetails extends StatelessWidget {
-  Sight sight;
+  final Sight sight;
 
   SightDetails({this.sight});
 
@@ -15,14 +16,14 @@ class SightDetails extends StatelessWidget {
             flex: 1,
             child: Stack(
               children: [
-                Container(color: Colors.blueAccent),
+                Container(color: colorPlaceForPhotos),
                 Positioned(
                   top: 36,
                   left: 16,
                   child: SafeArea(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: white,
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                       height: 32,
@@ -44,21 +45,21 @@ class SightDetails extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: Text(
                       sight.name,
-                      style: TextStyle(color: Color(0xFF3B3E5B), fontSize: 24, fontWeight: FontWeight.w700),
+                      style: TextStyle(color: textColorPrimary, fontSize: 24, fontWeight: FontWeight.w700),
                     ),
                   ),
                   Row(
                     children: [
                       Text(
                         sight.type,
-                        style: TextStyle(color: Color(0xFF3B3E5B), fontSize: 14, fontWeight: FontWeight.w700),
+                        style: TextStyle(color: textColorPrimary, fontSize: 14, fontWeight: FontWeight.w700),
                       ),
                       Container(
                         width: 16,
                       ),
                       Text(
                         'закрыто до 09:00',
-                        style: TextStyle(color: Color(0xFF7C7E92), fontSize: 14, fontWeight: FontWeight.w400),
+                        style: TextStyle(color: textColorSecondary, fontSize: 14, fontWeight: FontWeight.w400),
                       )
                     ],
                   ),
@@ -69,7 +70,7 @@ class SightDetails extends StatelessWidget {
                       maxLines: 7,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                        color: Color(0xFF3B3E5B),
+                        color: textColorPrimary,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -80,13 +81,13 @@ class SightDetails extends StatelessWidget {
                     height: 48,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Color(0xFF4CAF50),
+                      color: btnColor,
                       borderRadius: BorderRadius.all(Radius.circular(12)),
                     ),
                     child: Align(
                       child: Text(
                         'ПОСТРОИТЬ МАРШРУТ',
-                        style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w700),
+                        style: TextStyle(color: white, fontSize: 14, fontWeight: FontWeight.w700),
                       ),
                     ),
                   ),
@@ -104,12 +105,12 @@ class SightDetails extends StatelessWidget {
                                 margin: EdgeInsets.only(right: 10),
                                 width: 25,
                                 height: 25,
-                                decoration:
-                                    BoxDecoration(color: Colors.blueAccent, borderRadius: BorderRadius.circular(12.5)),
+                                decoration: BoxDecoration(
+                                    color: colorPlaceForPhotos, borderRadius: BorderRadius.circular(12.5)),
                               ),
                               Text(
                                 'Запланировать',
-                                style: TextStyle(fontSize: 14, color: Color(0xFF7C7E92), fontWeight: FontWeight.w400),
+                                style: TextStyle(fontSize: 14, color: textColorSecondary, fontWeight: FontWeight.w400),
                               )
                             ],
                           ),
@@ -125,11 +126,11 @@ class SightDetails extends StatelessWidget {
                               width: 25,
                               height: 25,
                               decoration:
-                                  BoxDecoration(color: Colors.blueAccent, borderRadius: BorderRadius.circular(12.5)),
+                                  BoxDecoration(color: colorPlaceForPhotos, borderRadius: BorderRadius.circular(12.5)),
                             ),
                             Text(
                               'В избранное',
-                              style: TextStyle(fontSize: 14, color: Color(0xFF3B3E5B), fontWeight: FontWeight.w400),
+                              style: TextStyle(fontSize: 14, color: textColorPrimary, fontWeight: FontWeight.w400),
                             )
                           ]),
                         ),

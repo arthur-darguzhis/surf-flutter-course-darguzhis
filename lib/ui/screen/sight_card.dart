@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/res/colors.dart';
 
 class SightCard extends StatelessWidget {
-  Sight sight;
+  final Sight sight;
 
   SightCard(this.sight);
 
@@ -20,7 +21,7 @@ class SightCard extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: colorPlaceForPhotos,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(16),
                         topRight: Radius.circular(16),
@@ -33,7 +34,7 @@ class SightCard extends StatelessWidget {
                     child: Text(
                       sight.type,
                       style: TextStyle(
-                        color: Colors.white,
+                        color: white,
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                       ),
@@ -45,7 +46,7 @@ class SightCard extends StatelessWidget {
                     child: Container(
                       height: 25,
                       width: 25,
-                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12.5)),
+                      decoration: BoxDecoration(color: white, borderRadius: BorderRadius.circular(12.5)),
                     ),
                   )
                 ],
@@ -55,7 +56,7 @@ class SightCard extends StatelessWidget {
               flex: 1,
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFFF5F5F5),
+                  color: backgroundColorForCard,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(12),
                     bottomRight: Radius.circular(12),
@@ -70,7 +71,7 @@ class SightCard extends StatelessWidget {
                         sight.name,
                         textAlign: TextAlign.start,
                         style: TextStyle(
-                          color: Color(0xFF3B3E5B),
+                          color: textColorPrimary,
                           fontWeight: FontWeight.w500,
                           fontSize: 16,
                         ),
@@ -84,7 +85,7 @@ class SightCard extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          color: Color(0xFF7C7E92),
+                          color: textColorSecondary,
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
                         ),
