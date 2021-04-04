@@ -6,5 +6,5 @@ class Sight {
   String details;
   String type;
 
-  Sight({this.name, this.lat, this.lot, this.url, this.details, this.type});
+  Sight({required this.name, required this.lat, required this.lot, required this.url, required this.details, required this.type});
 }

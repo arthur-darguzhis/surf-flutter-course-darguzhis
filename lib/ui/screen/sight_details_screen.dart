@@ -6,7 +6,7 @@ import 'package:places/ui/res/text_style.dart';
 class SightDetails extends StatelessWidget {
   final Sight sight;
 
-  SightDetails({this.sight});
+  SightDetails({required this.sight});
 
   @override
   Widget build(BuildContext context) {
