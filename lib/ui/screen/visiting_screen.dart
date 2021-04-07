@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+//TODO flutter_svg еще не null safety периодичеки проверять можно ли использовать или еще нет
 //import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/res/colors.dart';
@@ -53,6 +55,7 @@ class _TabBarOfVisitingState extends State<TabBarOfVisiting> with SingleTickerPr
         Column(
           children: [VisitedSightCard(mocks[2])],
         )
+        //TODO flutter_svg еще не null safety периодичеки проверять можно ли использовать или еще нет
         // Center(
         //   child: Column(
         //     mainAxisAlignment: MainAxisAlignment.center,
@@ -69,6 +72,7 @@ class _TabBarOfVisitingState extends State<TabBarOfVisiting> with SingleTickerPr
         //     ],
         //   ),
         // ),
+        //TODO flutter_svg еще не null safety периодичеки проверять можно ли использовать или еще нет
         // Center(
         //   child: Column(
         //     mainAxisAlignment: MainAxisAlignment.center,
