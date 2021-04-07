@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: TabBarOfVisiting(),
+      //home: TabBarOfVisiting(),
       //home: SightDetails(sight: mocks[0]),
-      //home: SightListScreen(),
+      home: SightListScreen(),
     );
   }
 }

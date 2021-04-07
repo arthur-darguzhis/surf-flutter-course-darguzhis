@@ -6,7 +6,7 @@ import 'package:places/mocks.dart';
 import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/res/text_style.dart';
-import 'package:places/ui/screen/sight_card.dart';
+import 'package:places/ui/widgets/sight_card.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/widgets/custom_buttom_nav_bar.dart';
 import 'package:places/ui/widgets/visited_sight_card.dart';
