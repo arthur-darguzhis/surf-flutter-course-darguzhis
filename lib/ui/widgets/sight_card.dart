@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
-import 'package:places/ui/res/colors.dart';
 
 class SightCard extends StatelessWidget {
   final Sight sight;
@@ -28,20 +27,19 @@ class SightCard extends StatelessWidget {
                         child: Image.network(
                           sight.url,
                           fit: BoxFit.cover,
-                          loadingBuilder: (BuildContext context, Widget child,
-                            ImageChunkEvent? loadingProgress) {
-                          if (loadingProgress == null) {
-                            return child;
-                          }
-                          return Center(
-                            child: CircularProgressIndicator(
-                              value: loadingProgress.expectedTotalBytes != null
-                                  ? loadingProgress.cumulativeBytesLoaded /
-                                  loadingProgress.expectedTotalBytes!
-                                  : null,
-                            ),
-                          );
-                        },),
+                          loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                            if (loadingProgress == null) {
+                              return child;
+                            }
+                            return Center(
+                              child: CircularProgressIndicator(
+                                value: loadingProgress.expectedTotalBytes != null
+                                    ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                                    : null,
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
                     Positioned(
@@ -49,11 +47,7 @@ class SightCard extends StatelessWidget {
                       left: 16,
                       child: Text(
                         sight.type,
-                        style: TextStyle(
-                          color: AppColors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                        ),
+                        style: Theme.of(context).textTheme.headline4,
                       ),
                     ),
                     Positioned(
@@ -62,7 +56,7 @@ class SightCard extends StatelessWidget {
                       child: Container(
                         height: 25,
                         width: 25,
-                        decoration: BoxDecoration(color: AppColors.white, borderRadius: BorderRadius.circular(12.5)),
+                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12.5)),
                       ),
                     )
                   ],
@@ -75,7 +69,7 @@ class SightCard extends StatelessWidget {
                 flex: 1,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: AppColors.backgroundColorForCard,
+                    color: Theme.of(context).cardColor,
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(12),
                       bottomRight: Radius.circular(12),
@@ -89,28 +83,17 @@ class SightCard extends StatelessWidget {
                         Text(
                           sight.name,
                           textAlign: TextAlign.start,
-                          style: TextStyle(
-                            color: AppColors.textColorPrimary,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                          ),
+                          style: Theme.of(context).textTheme.headline2,
                         ),
                         //Контейнер для отсупа между блоками текста
                         Container(
                           height: 5,
                         ),
-                        ConstrainedBox(
-                          constraints: BoxConstraints(maxWidth: 200),
-                          child: Text(
-                            sight.details,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              color: AppColors.textColorSecondary,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                            ),
-                          ),
+                        Text(
+                          sight.details,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                       ],
                     ),
