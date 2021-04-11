@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
-import 'package:places/ui/res/text_style.dart';
 
 class SightDetails extends StatelessWidget {
   final Sight sight;
@@ -18,23 +17,22 @@ class SightDetails extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                    child: Image.network(
-                      sight.url,
-                      fit: BoxFit.cover,
-                      loadingBuilder: (BuildContext context, Widget child,
-                          ImageChunkEvent? loadingProgress) {
-                        if (loadingProgress == null) {
-                          return child;
-                        }
-                        return Center(
-                          child: CircularProgressIndicator(
-                            value: loadingProgress.expectedTotalBytes != null
-                                ? loadingProgress.cumulativeBytesLoaded /
-                                loadingProgress.expectedTotalBytes!
-                                : null,
-                          ),
-                        );
-                      },),
+                  child: Image.network(
+                    sight.url,
+                    fit: BoxFit.cover,
+                    loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                      if (loadingProgress == null) {
+                        return child;
+                      }
+                      return Center(
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                              : null,
+                        ),
+                      );
+                    },
+                  ),
                 ),
                 Positioned(
                   top: 36,
@@ -42,7 +40,7 @@ class SightDetails extends StatelessWidget {
                   child: SafeArea(
                     child: Container(
                       decoration: BoxDecoration(
-                        color: AppColors.white,
+                        color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                       height: 32,
@@ -64,21 +62,21 @@ class SightDetails extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: Text(
                       sight.name,
-                      style: AppTextStyles.textBold24Primary,
+                      style: Theme.of(context).textTheme.headline5,
                     ),
                   ),
                   Row(
                     children: [
                       Text(
                         sight.type,
-                        style: AppTextStyles.textBold14Primary,
+                        style: Theme.of(context).textTheme.headline6,
                       ),
                       Container(
                         width: 16,
                       ),
                       Text(
                         'закрыто до 09:00',
-                        style: AppTextStyles.textRegular14Secondary,
+                        style: Theme.of(context).textTheme.headline3,
                       )
                     ],
                   ),
@@ -88,7 +86,7 @@ class SightDetails extends StatelessWidget {
                       sight.details,
                       maxLines: 7,
                       overflow: TextOverflow.ellipsis,
-                      style: AppTextStyles.textRegular14Primary,
+                      style: Theme.of(context).textTheme.bodyText2,
                     ),
                   ),
                   Container(
@@ -102,7 +100,7 @@ class SightDetails extends StatelessWidget {
                     child: Align(
                       child: Text(
                         'ПОСТРОИТЬ МАРШРУТ',
-                        style: AppTextStyles.textBold14White,
+                        style: Theme.of(context).textTheme.headline4,
                       ),
                     ),
                   ),
@@ -116,16 +114,16 @@ class SightDetails extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Container(
-                                margin: EdgeInsets.only(right: 10),
-                                width: 25,
-                                height: 25,
-                                decoration: BoxDecoration(
-                                    color: AppColors.colorPlaceForPhotos, borderRadius: BorderRadius.circular(12.5)),
+                              Icon(
+                                Icons.calendar_today_outlined,
+                                color: AppColors.secondary,
+                              ),
+                              SizedBox(
+                                width: 10,
                               ),
                               Text(
                                 'Запланировать',
-                                style: AppTextStyles.textRegular14Secondary,
+                                style: Theme.of(context).textTheme.headline3,
                               )
                             ],
                           ),
@@ -136,16 +134,13 @@ class SightDetails extends StatelessWidget {
                         child: Container(
                           height: 40,
                           child: Row(children: [
-                            Container(
-                              margin: EdgeInsets.only(right: 10),
-                              width: 25,
-                              height: 25,
-                              decoration:
-                                  BoxDecoration(color: AppColors.colorPlaceForPhotos, borderRadius: BorderRadius.circular(12.5)),
+                            Icon(Icons.favorite_outline, color: AppColors.primary),
+                            SizedBox(
+                              width: 10,
                             ),
                             Text(
                               'В избранное',
-                              style: AppTextStyles.textRegular14Primary,
+                              style: Theme.of(context).textTheme.bodyText2,
                             )
                           ]),
                         ),

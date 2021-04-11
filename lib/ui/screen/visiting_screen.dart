@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 //TODO flutter_svg еще не null safety периодичеки проверять можно ли использовать или еще нет
 //import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/mocks.dart';
-import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/strings.dart';
-import 'package:places/ui/res/text_style.dart';
-import 'package:places/ui/widgets/sight_card.dart';
-import 'package:places/ui/screen/sight_list_screen.dart';
 import 'package:places/ui/widgets/custom_buttom_nav_bar.dart';
 import 'package:places/ui/widgets/visited_sight_card.dart';
 import 'package:places/ui/widgets/want_to_visit_sight_card.dart';
@@ -36,10 +32,8 @@ class _TabBarOfVisitingState extends State<TabBarOfVisiting> with SingleTickerPr
         title: Text(
           'Избранное',
           textAlign: TextAlign.center,
-          style: AppTextStyles.textMedium18Black,
+          style: Theme.of(context).textTheme.headline1,
         ),
-        elevation: 0,
-        backgroundColor: Colors.transparent,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(52),
           child: TabBarVisitingIndicator(tabController!),
@@ -109,7 +103,11 @@ class TabBarVisitingIndicator extends StatelessWidget {
       child: Container(
         height: 40,
         decoration: BoxDecoration(
-            color: AppColors.backgroundColorForTabBar, borderRadius: BorderRadius.all(Radius.circular(40))),
+          color: Theme.of(context).cardColor,
+          borderRadius: BorderRadius.all(
+            Radius.circular(40),
+          ),
+        ),
         child: Row(
           children: [
             for (int i = 0; i < tabController.length; i++)
@@ -118,19 +116,20 @@ class TabBarVisitingIndicator extends StatelessWidget {
                   height: 40,
                   decoration: BoxDecoration(
                     color: tabController.index == i
-                        ? AppColors.tabBarSelectedDecoration
-                        : AppColors.tabBarUnelectedDecoration,
+                        ? Theme.of(context).tabBarTheme.labelColor
+                        : Theme.of(context).tabBarTheme.unselectedLabelColor,
                     borderRadius: BorderRadius.all(Radius.circular(40)),
                   ),
                   child: TextButton(
-                    onPressed: (){
+                    onPressed: () {
                       tabController.index = i;
                     },
                     child: Center(
                       child: Text(
                         AppStrings.visitingScreenTabs[i],
-                        style:
-                            tabController.index == i ? AppTextStyles.textBold14White : AppTextStyles.textBold14Secondary,
+                        style: tabController.index == i
+                            ? Theme.of(context).tabBarTheme.labelStyle
+                            : Theme.of(context).tabBarTheme.unselectedLabelStyle,
                       ),
                     ),
                   ),
