@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class CustomBottomNavBar extends StatelessWidget {
           label: '',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
+          icon: SvgPicture.asset('res/icons/heart.svg'),
           label: '',
         ),
         BottomNavigationBarItem(

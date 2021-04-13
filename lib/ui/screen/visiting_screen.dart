@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-//TODO flutter_svg еще не null safety периодичеки проверять можно ли использовать или еще нет
-//import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/res/strings.dart';
 import 'package:places/ui/widgets/custom_buttom_nav_bar.dart';
@@ -48,38 +47,36 @@ class _TabBarOfVisitingState extends State<TabBarOfVisiting> with SingleTickerPr
         ),
         Column(
           children: [VisitedSightCard(mocks[2])],
-        )
-        //TODO flutter_svg еще не null safety периодичеки проверять можно ли использовать или еще нет
+        ),
         // Center(
         //   child: Column(
         //     mainAxisAlignment: MainAxisAlignment.center,
         //     children: [
-        //       //SvgPicture.asset('res/icons/card.svg'),
+        //       SvgPicture.asset('res/icons/card.svg'),
         //       Text(
         //         AppStrings.empty,
-        //         style: AppTextStyles.textMedium18Secondary,
+        //         style: Theme.of(context).textTheme.headline3!.copyWith(fontSize: 18, fontWeight: FontWeight.w500),
         //       ),
         //       Text(
         //         AppStrings.emptyPlacesWantToVisit,
-        //         style: AppTextStyles.textRegular14Secondary,
+        //         style: Theme.of(context).textTheme.headline3,
         //       )
         //     ],
         //   ),
         // ),
-        //TODO flutter_svg еще не null safety периодичеки проверять можно ли использовать или еще нет
         // Center(
         //   child: Column(
         //     mainAxisAlignment: MainAxisAlignment.center,
         //     children: [
-        //       //SvgPicture.asset('res/icons/go.svg'),
+        //       SvgPicture.asset('res/icons/go.svg'),
         //       Text(
         //         AppStrings.empty,
-        //         style: AppTextStyles.textMedium18Secondary,
+        //         style: Theme.of(context).textTheme.headline3!.copyWith(fontSize: 18, fontWeight: FontWeight.w500),
         //         textAlign: TextAlign.center,
         //       ),
         //       Text(
         //         AppStrings.emptyVisitedPlaces,
-        //         style: AppTextStyles.textRegular14Secondary,
+        //         style: Theme.of(context).textTheme.headline3,
         //         textAlign: TextAlign.center,
         //       )
         //     ],

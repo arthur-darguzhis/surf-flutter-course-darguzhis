@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/domain/sight.dart';
 
 class WantToVisitSightCard extends StatelessWidget {
@@ -51,8 +52,8 @@ class WantToVisitSightCard extends StatelessWidget {
                   Positioned(
                     top: 16,
                     right: 57,
-                    child: Icon(
-                      Icons.calendar_today_outlined,
+                    child: SvgPicture.asset(
+                      'res/icons/calendar.svg',
                       color: Colors.white,
                     ),
                   ),

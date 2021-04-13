@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/res/colors.dart';
 
@@ -45,6 +46,12 @@ class SightDetails extends StatelessWidget {
                       ),
                       height: 32,
                       width: 32,
+                      child: SvgPicture.asset(
+                        'res/icons/arrow_back.svg',
+                        color: Color(0xFF252849),
+                        height: 24,
+                        width: 24,
+                      ),
                     ),
                   ),
                 ),
@@ -98,9 +105,23 @@ class SightDetails extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(12)),
                     ),
                     child: Align(
-                      child: Text(
-                        'ПОСТРОИТЬ МАРШРУТ',
-                        style: Theme.of(context).textTheme.headline4,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset(
+                            'res/icons/go.svg',
+                            color: Colors.white,
+                            height: 24,
+                            width: 24,
+                          ),
+                          SizedBox(
+                            width: 9,
+                          ),
+                          Text(
+                            'ПОСТРОИТЬ МАРШРУТ',
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -114,10 +135,7 @@ class SightDetails extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
-                                Icons.calendar_today_outlined,
-                                color: AppColors.secondary,
-                              ),
+                              SvgPicture.asset('res/icons/calendar.svg', color: AppColors.secondary),
                               SizedBox(
                                 width: 10,
                               ),
@@ -134,7 +152,10 @@ class SightDetails extends StatelessWidget {
                         child: Container(
                           height: 40,
                           child: Row(children: [
-                            Icon(Icons.favorite_outline, color: AppColors.primary),
+                            SvgPicture.asset(
+                              'res/icons/heart.svg',
+                              color: AppColors.primary,
+                            ),
                             SizedBox(
                               width: 10,
                             ),
